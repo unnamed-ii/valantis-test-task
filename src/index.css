@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.app {
+  max-width: 1110px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.app__pagination {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.p-datatable-wrapper {
+  height: 50vh;
+}
+
+.filter-select {
+  margin-bottom: 20px;
+}
+
+.filter-select form {
+  margin: 0 auto 10px;
+}
+
+.filter-select__input {
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.filter-select__input .p-input-icon-left {
+  width: 100% !important;
+}
+
+.filter-select__input .p-inputtext {
+  width: 100% !important;
+}
+
+.filter-select .p-dropdown {
+  width: 57%;
+  margin-right: 5%;
+}
+
+.filter-select__button-wrapper {
+  text-align: center;
+}
+
+@media (min-width: 450px) {
+  .p-datatable-wrapper {
+    height: 70vh;
+  }
+  .filter-select form {
+    width: 25rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .filter-select .p-dropdown {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .p-button {
+    width: 100%;
+  }
+}
