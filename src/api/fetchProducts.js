@@ -19,7 +19,7 @@ export const fetchProducts = async (ids) => {
         );
         return response.data.result || [];
     } catch (error) {
-            if (axios.isAxiosError(error)) {
+        if (axios.isAxiosError(error)) {
             console.error('HTTP Error:', error.response?.status);
             console.log("RETRYING REQUEST");
             if (retryFetchCount < 5) {
