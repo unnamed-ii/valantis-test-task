@@ -36,11 +36,11 @@ export const fetchProductsIDS = async (currentPage, setProducts, setIsLoading) =
             console.log("RETRYING REQUEST");
             if (retryFetchCount < 5) {
                 retryFetchCount++;
-                setTimeout(await void fetchProductsIDS(
+                await void fetchProductsIDS(
                     currentPage,
                     setProducts,
                     setIsLoading
-                ), 1000);
+                );
             } else {
                 console.error("Retried to call server max times (5)");
             }
