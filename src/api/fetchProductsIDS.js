@@ -21,6 +21,15 @@ export const fetchProductsIDS = async (currentPage, setProducts, setIsLoading) =
         const ids = response.data.result;
         const productsData = await fetchProducts(ids);
 
+        // when we got error in fetchProduct function, we recall it,
+        // but at that time we already wrote value in productsData variable which is undefined,
+        // so now we need to recall fetchProductsIDS to rewrite value productsData
+        if (!productsData) {
+            console.log("RETRYING REQUEST");
+            await fetchProductsIDS(currentPage, setProducts, setIsLoading);
+            return;
+        }
+
         // handle duplicates by id
         const uniqueProducts = Array.from(
             new Set(productsData?.map((product) => product.id))

@@ -33,6 +33,7 @@ export const FilterSelect = ({isLoading, setProducts, setIsLoading, currentPage,
 
     const handleFormSubmit = async (e) => {
         e.preventDefault();
+        setCurrentPage(1);
         await fetchFilteredProducts(
             activeFilter.fetchingParamName,
             searchInputValue,
@@ -49,7 +50,7 @@ export const FilterSelect = ({isLoading, setProducts, setIsLoading, currentPage,
 
     return (
         <div className="filter-select">
-            <form onSubmit={(e) => handleFormSubmit(e)}>
+            <form onSubmit={handleFormSubmit}>
                 <div className="filter-select__input">
                     <span className="p-input-icon-left" onClick={onClick}>
                         {isLoading

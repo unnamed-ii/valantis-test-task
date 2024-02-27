@@ -35,6 +35,7 @@ function App() {
                 <Pagination
                     currentPage={currentPage}
                     setCurrentPage={setCurrentPage}
+                    isLoading={isLoading}
                 />
             </div>
         </div>
