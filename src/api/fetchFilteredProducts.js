@@ -28,6 +28,13 @@ export const fetchFilteredProducts = async (filterName, filterValue, setProducts
         );
         const ids = response.data.result;
         const productsData = await fetchProducts(ids);
+
+        if (!productsData) {
+            console.log("RETRYING REQUEST");
+            await fetchFilteredProducts(filterName, filterValue, setProducts, setIsLoading)
+            return;
+        }
+
         setProducts(productsData);
         setIsLoading(false);
     } catch (error) {
