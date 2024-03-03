@@ -10,7 +10,7 @@ const FILTERS = [
     {name: 'Бренд', fetchingParamName: "brand"},
 ];
 
-export const FilterSelect = ({isLoading, setProducts, setIsLoading, currentPage, setCurrentPage}) => {
+export const FilterSelect = ({isLoading, setProducts, setIsLoading, currentPage, setCurrentPage, setIsRequestFiltered}) => {
     const [activeFilter, setActiveFilter] = useState(null);
     const [searchInputType, setSearchInputType] = useState("text");
     const [searchInputValue, setSearchInputValue] = useState("");
@@ -23,6 +23,7 @@ export const FilterSelect = ({isLoading, setProducts, setIsLoading, currentPage,
     const removeFilters = async () => {
         setCurrentPage(1);
         setActiveFilter(null);
+        setIsRequestFiltered(false);
         setSearchInputValue("");
         await fetchProductsIDS(
             currentPage,
@@ -34,6 +35,7 @@ export const FilterSelect = ({isLoading, setProducts, setIsLoading, currentPage,
     const handleFormSubmit = async (e) => {
         e.preventDefault();
         setCurrentPage(1);
+        setIsRequestFiltered(true);
         await fetchFilteredProducts(
             activeFilter.fetchingParamName,
             searchInputValue,

@@ -12,6 +12,7 @@ function App() {
     const [isLoading, setIsLoading] = useState(false);
     const [products, setProducts] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
+    const [isRequestFiltered, setIsRequestFiltered] = useState(false);
     useEffect(() => {
         void fetchProductsIDS(currentPage, setProducts, setIsLoading);
     }, [currentPage]);
@@ -25,6 +26,7 @@ function App() {
                     setIsLoading={setIsLoading}
                     currentPage={currentPage}
                     setCurrentPage={setCurrentPage}
+                    setIsRequestFiltered={setIsRequestFiltered}
                 />
                 {isLoading
                     ?
@@ -36,6 +38,7 @@ function App() {
                     currentPage={currentPage}
                     setCurrentPage={setCurrentPage}
                     isLoading={isLoading}
+                    isRequestFiltered={isRequestFiltered}
                 />
             </div>
         </div>

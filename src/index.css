@@ -27,6 +27,18 @@ code {
 }
 
 .app__pagination {
+  padding-top: 10px;
+  position: relative;
+}
+
+.app__pagination-message {
+  text-align: center;
+  font-weight: bold;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.app__pagination-buttons {
   margin-top: 16px;
   display: flex;
   justify-content: center;
@@ -81,6 +93,10 @@ code {
   .filter-select .p-dropdown {
     width: 100%;
     margin-bottom: 10px;
+  }
+
+  .app__pagination-message {
+    font-size: 13px;
   }
 
   .p-button {
